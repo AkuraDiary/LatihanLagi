@@ -45,19 +45,7 @@ namespace LatihanLagi
 
         }
 
-        private void CheckBoxChanged(object sender, RoutedEventArgs e)
-        {
-            if (WindowsCredentialsCheckBox.IsChecked == true)
-            {
-                LocalUserNameTextBox.Text = Environment.UserName;
-                LocalPasswordBox.Password = "SHOW_SOME_PASSWORD";
-            }
-            else
-            {
-                LocalUserNameTextBox.Text = string.Empty;
-                LocalPasswordBox.Password = string.Empty;
-            }
-        }
+     
 
         private void BtnActionMinimize_OnClick(object sender, RoutedEventArgs e)
         {
