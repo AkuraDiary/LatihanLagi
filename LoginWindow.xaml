@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LatihanLagi"
         mc:Ignorable="d"
-        Title="Login Window" Height="450" Width="800"
+        Title="Login Window"
         WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" SnapsToDevicePixels="True"
-        Background="White" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize">
+        Background="White" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" d:DesignWidth="483.5" d:DesignHeight="340.083">
     <Window.Resources>
 
         <local:ValueConverter x:Key="ValueConverter" />
@@ -25,10 +25,10 @@
             <Grid Grid.Row="0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Height="40">
                     <Path Width="19.5" Height="28.5" Margin="20,0,12,0" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{StaticResource ThemeColorBrush}" Data="F1 M 25,27L 46,19L 46,22.25L 28.5,29L 31.75,31.25L 51,23.75L 51,48.5L 31.75,57L 25,52L 25,27 Z "/>
-                    
+
                     <TextBlock Foreground="{StaticResource ThemeColorBrush}" Text="Login Window" FontSize="20" Margin="8,2,0,0" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe WP" />
                 </StackPanel>
-                <Thumb Opacity="0" Background="Transparent" Foreground="{x:Null}" DragDelta="Thumb_OnDragDelta" HorizontalAlignment="Left" Width="798"/>
+                <Thumb Opacity="0" Background="Transparent" Foreground="{x:Null}" DragDelta="Thumb_OnDragDelta" HorizontalAlignment="Center" Width="482"/>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,8,0">
 
                     <Button ToolTip="Minimize" Width="32" Height="28" Style="{StaticResource WindowActionButton}" Click="BtnActionMinimize_OnClick">
@@ -48,13 +48,10 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Column="1" Name="SplitGrid" Width="20" Visibility="Visible">
-                        <StackPanel Height="326" Width="1" Background="{StaticResource MainWindowSplitBorderBrush}" Margin="0,40,0,40"></StackPanel>
-                    </Grid>
-                    <Grid Name="LocalLoginGrid" Visibility="Visible" Width="380" Grid.ColumnSpan="3" Margin="209,0,209,0">
+                    <Grid Name="LocalLoginGrid" Visibility="Visible" Width="380" Grid.ColumnSpan="3" Margin="51,0,50,0">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
-                            <Label Content="Local Login" Margin="0,4,0,12" HorizontalAlignment="Center" Foreground="{DynamicResource MainBlackFontColor}" FontFamily="Segoe UI Semilight" FontSize="26"></Label>
+                            <Label Content="Login Page" Margin="0,4,0,12" HorizontalAlignment="Center" Foreground="{DynamicResource MainBlackFontColor}" FontFamily="Segoe UI Semilight" FontSize="26"></Label>
                             <Grid Margin="0,0,0,8">
                                 <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Height="22" Text="Username" Foreground="{StaticResource UserControlButtonIsPressedBrush}"
                                            Visibility="{Binding ElementName=LocalUserNameTextBox, PresentationTraceSources.TraceLevel=High, Converter={StaticResource BooleanToVisibilityConverter}}" />
@@ -63,13 +60,7 @@
                             <Grid Margin="0,0,0,8">
                                 <PasswordBox Background="Transparent" HorizontalContentAlignment="Center" BorderBrush="{StaticResource MainBlackFontColor}" HorizontalAlignment="Center" VerticalContentAlignment="Center" Name="LocalPasswordBox" Height="36" Width="220" IsEnabled="{Binding ElementName=WindowsCredentialsCheckBox, Path=IsChecked, Converter={StaticResource ValueConverter}}" TabIndex="5" />
                             </Grid>
-                            <Grid Margin="0,0,0,8">
-                                <ComboBox Name="LocalDatabaseComboBox" Style="{StaticResource LoginComboboxStyle}" TabIndex="6"/>
-                            </Grid>
-
-                            <ProgressBar x:Name="LocalMetroProgressBar" Visibility="Visible" Height="16" Margin="0,4,0,8" HorizontalAlignment="Center"  Width="220" Background="Transparent" BorderBrush="{StaticResource ThemeColorBrush}" Foreground="{DynamicResource ThemeColorBrush}" BorderThickness="1" IsIndeterminate="False"/>
-
-                            <CheckBox Visibility="Visible" Name="WindowsCredentialsCheckBox" Content="Windows Credentials" Height="26" Margin="-6,0,0,8" HorizontalAlignment="Center" IsChecked="False" VerticalAlignment="Center" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged" TabIndex="7"/>
+                            <Grid Margin="0,0,0,8"/>
                             <Button Name="LocalLoginButton" Content="Login" Width="220" Height="36" Margin="0,0,0,32" TabIndex="8" />
                         </StackPanel>
                     </Grid>
