@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Login Window"
         WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" SnapsToDevicePixels="True"
-        Background="White" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" d:DesignWidth="483.5" d:DesignHeight="340.083">
+        Background="White" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" d:DesignWidth="483.5" d:DesignHeight="474.083">
     <Window.Resources>
 
         <local:ValueConverter x:Key="ValueConverter" />
@@ -18,17 +18,17 @@
     <Border  Style="{StaticResource CoreBorderStyle}">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="48" />
+                <RowDefinition Height="56" />
                 <RowDefinition Height="1" />
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Height="40">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Height="36">
                     <Path Width="19.5" Height="28.5" Margin="20,0,12,0" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{StaticResource ThemeColorBrush}" Data="F1 M 25,27L 46,19L 46,22.25L 28.5,29L 31.75,31.25L 51,23.75L 51,48.5L 31.75,57L 25,52L 25,27 Z "/>
 
                     <TextBlock Foreground="{StaticResource ThemeColorBrush}" Text="Login Window" FontSize="20" Margin="8,2,0,0" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe WP" />
                 </StackPanel>
-                <Thumb Opacity="0" Background="Transparent" Foreground="{x:Null}" DragDelta="Thumb_OnDragDelta" HorizontalAlignment="Center" Width="482"/>
+                <Thumb Opacity="0" Background="Transparent" Foreground="{x:Null}" DragDelta="Thumb_OnDragDelta" HorizontalAlignment="Center" Width="481"/>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,8,0">
 
                     <Button ToolTip="Minimize" Width="32" Height="28" Style="{StaticResource WindowActionButton}" Click="BtnActionMinimize_OnClick">
@@ -51,17 +51,24 @@
                     <Grid Name="LocalLoginGrid" Visibility="Visible" Width="380" Grid.ColumnSpan="3" Margin="51,0,50,0">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 
-                            <Label Content="Login Page" Margin="0,4,0,12" HorizontalAlignment="Center" Foreground="{DynamicResource MainBlackFontColor}" FontFamily="Segoe UI Semilight" FontSize="26"></Label>
+                            
                             <Grid Margin="0,0,0,8">
-                                <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Height="22" Text="Username" Foreground="{StaticResource UserControlButtonIsPressedBrush}"
+                                <Label Content="Username" Margin="0,0,0,4" HorizontalAlignment="Left" Foreground="{DynamicResource MainBlackFontColor}" FontFamily="Segoe UI Semilight" FontSize="16"></Label>
+                            </Grid>
+                            <Grid Margin="0,0,0,8">
+                                <TextBlock Margin="4,1,2,0" VerticalAlignment="Center" TextAlignment="Center" FontSize="16" Height="22" Text="Username" Foreground="SteelBlue"
                                            Visibility="{Binding ElementName=LocalUserNameTextBox, PresentationTraceSources.TraceLevel=High, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                 <TextBox Style="{StaticResource LoginTextBoxStyle}" Name="LocalUserNameTextBox" IsEnabled="{Binding ElementName=WindowsCredentialsCheckBox, Path=IsChecked, Converter={StaticResource ValueConverter}}" CharacterCasing="Lower" TabIndex="4" />
                             </Grid>
                             <Grid Margin="0,0,0,8">
-                                <PasswordBox Background="Transparent" HorizontalContentAlignment="Center" BorderBrush="{StaticResource MainBlackFontColor}" HorizontalAlignment="Center" VerticalContentAlignment="Center" Name="LocalPasswordBox" Height="36" Width="220" IsEnabled="{Binding ElementName=WindowsCredentialsCheckBox, Path=IsChecked, Converter={StaticResource ValueConverter}}" TabIndex="5" />
+                                <Label Content="Password" Margin="0,0,0,4" HorizontalAlignment="Left" Foreground="{DynamicResource MainBlackFontColor}" FontFamily="Segoe UI Semilight" FontSize="16"></Label>
                             </Grid>
-                            <Grid Margin="0,0,0,8"/>
-                            <Button Name="LocalLoginButton" Content="Login" Width="220" Height="36" Margin="0,0,0,32" TabIndex="8" />
+                            <Grid Margin="0,0,0,8">
+                                <PasswordBox Background="Transparent" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Name="LocalPasswordBox" Height="36" Width="220" IsEnabled="{Binding ElementName=WindowsCredentialsCheckBox, Path=IsChecked, Converter={StaticResource ValueConverter}}" TabIndex="5" />
+                            </Grid>
+                            <Grid Margin="0,0,8,8"/>
+                            <Button x:Name="LocalLoginButton" Content="Login" Width="220" Height="36" TabIndex="8" />
+                            <Grid Margin="0,0,8,24"/>
                         </StackPanel>
                     </Grid>
                 </Grid>

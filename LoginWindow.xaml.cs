@@ -24,25 +24,7 @@ namespace LatihanLagi
         public LoginWindow()
         {
             InitializeComponent();
-
-            // Uncomment if you want to show only the Azure Login side.
-            //SplitGrid.Visibility = Visibility.Collapsed;
-            //LocalLoginGrid.Visibility = Visibility.Collapsed;
-            //if (AzureLoginGrid.Visibility == Visibility.Visible)
-            //{
-            //    AzureUserNameTextBox.Focus();
-            //}
-
-
-
-            // Uncomment if you want to show only the Local Login side.
-            //AzureLoginGrid.Visibility = Visibility.Collapsed;
-            //SplitGrid.Visibility = Visibility.Collapsed;
-            //if (LocalLoginGrid.Visibility == Visibility.Visible)
-            //{
-            //    LocalUserNameTextBox.Focus();
-            //}
-
+            LocalLoginGrid.Visibility = Visibility.Visible;
         }
 
      
